@@ -1,3 +1,4 @@
+Before using make changes in config folder route file url path line as per your browsing path
 ###################
 What is CodeIgniter
 ###################
