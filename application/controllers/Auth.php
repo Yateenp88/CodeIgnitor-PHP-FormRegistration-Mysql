@@ -5,11 +5,14 @@ This Function will show register page
 */
         public function register(){
             $this->load->library('form_validation');
+
+            $this->form_validation->set_message('is_unique','Email already existed!');
+
             $this->form_validation->set_rules('fname','First Name','required');
             $this->form_validation->set_rules('lname','LastName','required');
             $this->form_validation->set_rules('pwd','Password','required');
             $this->form_validation->set_rules('phone','Phone','required');
-            $this->form_validation->set_rules('email','Email Id','required');
+            $this->form_validation->set_rules('email','Email Id','required|valid_email|is_unique[users.email]');
 
             if($this->form_validation->run() == false){
                 $this->load->view('register');
@@ -26,7 +29,7 @@ This Function will show register page
                 $formArray['created_at'] = date('Y-m-d H:i:s');
                 $this->Auth_model->create($formArray);
                 $this->session->set_flashdata('msg','Account has been created successfully');
-                redirect(base_url().'index.php/Auth/register');
+                redirect(base_url().'index.php/auth/register');
             }
             
         }

@@ -9,11 +9,11 @@
 </head>
 <body>
  <?php  $msg=$this->session->set_flashdata('msg'); 
-        if($msg !='')
+        if($msg !="")
         {
             echo "<div class='alert alert-success'>'.$msg.'</div>";
         }
- 
+     
  ?>
     <div class="col-md-7">
     <div class="card">
@@ -26,12 +26,12 @@
           <div class="form-group">
                 <label for="name">First Name</label>
                 <input type="text" name="fname" id="fname" value="<?php echo set_value('fname'); ?>" class="form-control <?php echo (form_error('fname') !="") ? 'is-valid' : '';?>" placeholder="First Name">
-                <p  class="invalid-feedback" ><?php echo form_error('fnames')?></p>
+                <p  class="invalid-feedback" ><?php echo form_error('fname')?></p>
             </div>  
             <div class="form-group">
                 <label for="name">Last Name</label>
                 <input type="text" name="lname" id="lname" value="<?php echo set_value('lname'); ?>" class="form-control <?php echo (form_error('lname') !="") ? 'is-valid' : '';?>" placeholder="Last Name">
-                <p class="invalid-feedback"><?php echo form_error('lnames')?></p>
+                <p class="invalid-feedback"><?php echo form_error('lname')?></p>
             </div>  
             <div class="form-group">
                 <label for="name">Email</label>
